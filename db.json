@@ -1,0 +1,93 @@
+{
+  "series": [
+    {
+      "cover": "https://tomaprimera.es/wp-content/uploads/2023/03/cuando-llega-brooklyn-99-temporada-8-a-netflix-1.jpg",
+      "title": "Brooklyn Nine Nine",
+      "streamingPlatform": "Netflix",
+      "reviews": [
+        {
+          "author": "Laura",
+          "personalRating": 9
+        },
+        {
+          "author": "Elena",
+          "personalRating": 8.5
+        }
+      ],
+      "synopsis": "Es una comedia policial que sigue las aventuras del detective Jake Peralta (Andy Samberg) y el capitán Ray Holt (Andre Braugher) en la comisaría 99 de Brooklyn, Nueva York. La serie se centra en los conflictos generacionales y las dinámicas cómicas entre los diversos y peculiares miembros del equipo.",
+      "averageRating": 8.5
+    },
+    {
+      "cover": "https://image.tmdb.org/t/p/original/acCuY6pAhEGuFVL30ogNSZPyw2y.jpg",
+      "title": "Community",
+      "streamingPlatform": "Netflix",
+      "reviews": [
+        {
+          "author": "Elena",
+          "personalRating": 8
+        },
+        {
+          "author": "Pedro",
+          "personalRating": 7.5
+        }
+      ],
+      "synopsis": "Un abogado al que le han prohibido ejercer por mentir sobre su título se mete en un improbable grupo de estudio de un centro de formación de adultos. Basadas en las propias experiencias de Dan Harmon, la comedia empieza tímida pero pronto logra enganchar y hacer que no dejemos de reir episodio a episodio.",
+      "averageRating": 7.8
+    },
+    {
+      "cover": "https://example.com/cover3.jpg",
+      "title": "The Office",
+      "streamingPlatform": "Prime Video",
+      "reviews": [
+        {
+          "author": "Miguel",
+          "personalRating": 9.5
+        },
+        {
+          "author": "Laura",
+          "personalRating": 9
+        }
+      ],
+      "synopsis": "Sigue la vida diaria de los empleados de la oficina regional de ventas de papel Dunder Mifflin en Scranton, Pensilvania. La serie se centra en el excéntrico y a menudo inapropiado jefe Michael Scott y su peculiar equipo de empleados, quienes enfrentan diversas situaciones cómicas y a veces absurdas en su entorno laboral.",
+      "averageRating": 9.2
+    },
+    {
+      "cover": "https://cdn.seat42f.com/wp-content/uploads/2022/12/09080030/The-Last-Of-Us-Season-1-Poster-Key-Art.jpg",
+      "title": "The Last of Us",
+      "streamingPlatform": "HBO max",
+      "reviews": [
+        {
+          "author": "Laura",
+          "personalRating": 9
+        },
+        {
+          "author": "Elena",
+          "personalRating": 9
+        },
+        {
+          "author": "Pedro",
+          "personalRating": 8.8
+        }
+      ],
+      "synopsis": "Sigue a Joel y Ellie mientras navegan por un mundo devastado por una infección que ha transformado a la mayoría de la humanidad en criaturas peligrosas. La serie explora su relación y los desafíos que enfrentan en su lucha por sobrevivir en un entorno hostil.",
+      "averageRating": 8.9
+    },
+    {
+      "cover": "https://pics.filmaffinity.com/Yellowstone_TV_Series-884945491-large.jpg",
+      "title": "Yellowstone",
+      "streamingPlatform": "SkyShowtime",
+      "reviews": [
+        {
+          "author": "Elena",
+          "personalRating": 8.5
+        },
+        {
+          "author": "Miguel",
+          "personalRating": 8
+        }
+      ],
+      "synopsis": "La familia Dutton, propietarios del rancho más grande de Estados Unidos, luchan por proteger su tierra de diversas amenazas. La serie explora temas de poder, familia y la lucha por mantener un legado en un entorno salvaje y cambiante.",
+      "averageRating": 8.3
+    }
+  ]
+}
