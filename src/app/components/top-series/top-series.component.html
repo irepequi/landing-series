@@ -1,0 +1,33 @@
+<h2>Top series</h2>
+
+<div class="group-card">
+
+  <div class="card" *ngFor="let serie of averages; index as index">
+    <div class="rating-flag">{{ index + 1 }}</div>
+
+    <img class="card-image" [src]="serie.cover" alt="{{ serie.title }}">
+
+    <div class="card-content">
+      <div class="details">
+        <h3 class="title">{{ serie.title }}</h3>
+        <div class="rating">
+          <h4>{{ serie.streamingPlatform }}</h4>
+          <ng-container *ngIf="isValueNaN(serie.averageRating); else notNaN">
+            <h4>Sin valoración</h4>
+          </ng-container>
+          <ng-template #notNaN>
+            <h4>{{ serie.averageRating }}</h4>
+          </ng-template>
+
+        </div>
+      </div>
+
+      <div class="card-description">
+        <p>{{ serie.synopsis }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

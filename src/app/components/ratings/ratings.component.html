@@ -1,0 +1,108 @@
+<div class="title">
+  <h1>¡Hola {{ user }}!</h1>
+  <h3>¿Qué serie te ha dejado más impactado que el final de "Lost"?📺✨</h3>
+</div>
+
+<div class="form-serie">
+  <!-- BOTON NUEVA SERIE -->
+  <ng-container *ngIf="!isOpen; else elseTemplate">
+    <button class="btn-serie" type="button" (click)="openNewSerie()">Añadir Serie</button>
+  </ng-container>
+
+  <!-- MODAL DEL FORM NUEVA SERIE -->
+  <ng-template #elseTemplate>
+    <div class="form-modal">
+      <div class="form-background"></div>
+      <div class="form-container">
+        <div><button class="btn-close" type="button" (click)="closeNewSerie()">✕</button></div>
+
+        <h2 class="form-title">Añadir Nueva Serie</h2>
+
+        <form (submit)="addSerie()">
+          <div class="form-left">
+            <div class="form-group">
+              <label for="title">Título:</label>
+              <input type="text" id="title" [(ngModel)]="newSerie.title" name="title" required>
+            </div>
+
+            <div class="form-group">
+              <label for="streamingPlatform">Plataforma:</label>
+              <input type="text" id="streamingPlatform" [(ngModel)]="newSerie.streamingPlatform"
+                name="streamingPlatform" required>
+            </div>
+
+            <div class="form-group">
+              <label for="cover">Url imagen:</label>
+              <!-- <input type="file" id="cover" formControlName="cover" name="cover"> -->
+              <input type="text" id="cover" [(ngModel)]="newSerie.cover" name="cover">
+            </div>
+          </div>
+
+          <div class="form-right">
+            <div class="form-group">
+              <label for="synopsis">Sinopsis:</label>
+              <textarea id="synopsis" [(ngModel)]="newSerie.synopsis" name="synopsis" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Añadir</button>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+
+  </ng-template>
+</div>
+
+<!-- CARD -->
+<div class="group-card">
+  <div class="card" *ngFor="let serie of series">
+
+    <div class="card-content">
+      <div  class="card-image" >
+        <img [src]="serie.cover" alt="{{ serie.title }}">
+      </div>
+      <!-- <img class="card-image" [src]="serie.cover" alt="{{ serie.title }}"> -->
+
+      <div class="card-description">
+        <h3 class="card-title">{{ serie.title }}</h3>
+        <h4>{{ serie.streamingPlatform }}</h4>
+      </div>
+
+      <div class="card-ratings">
+        <div class="title-rating">
+          <h3>Valoraciones</h3>
+          <ng-container *ngIf="serie !== selectedSerie">
+            <div><button class="btn-rating" type="button" (click)="showAddReviewForm(serie)">+</button></div>
+          </ng-container>
+        </div>
+
+        <!-- FORM NUEVA VALORACION -->
+        <ng-container *ngIf="serie === selectedSerie">
+          <form (submit)="addReview(serie.id)" class="rating-form">
+            <label for="rating">Nueva valoración:</label>
+            <input type="number" id="rating" [(ngModel)]="personalRating" name="rating" required>
+
+            <div class="btn-group-rating">
+              <button type="submit" class="btn-submit-rating">Añadir</button>
+              <button class="btn-cancel-rating" (click)="closeRating()">Cancelar</button>
+            </div>
+          </form>
+        </ng-container>
+
+        <!-- VALORACIONES DE LA SERIE -->
+        <div *ngFor="let serieReviews of reviewsById">
+          <div *ngFor="let review of serieReviews">
+            <div class="personalRating" *ngIf="review.idSerie === serie.id">
+              <p>{{ review.author }}</p>
+              <p><strong>{{ review.personalRating }}</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

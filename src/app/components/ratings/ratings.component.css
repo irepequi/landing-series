@@ -1,0 +1,371 @@
+/* ESTILO TITULO  */
+.title h3 {
+  font-weight: bold;
+}
+
+/* ESTILOS BOTON AÑADIR SERIE */
+.btn-serie {
+  background-color: #fa2c05;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-serie:hover {
+  background-color: #b32100;
+}
+
+.btn-serie:active {
+  background-color: #cc2400;
+}
+
+.btn-serie:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 44, 5, 0.5);
+}
+
+/* ESTILO CARD */
+.group-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  width: 100%;
+  height: 18rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-content {
+  display: flex;
+  width: 100%;
+}
+
+.card-image {
+  border-right: 1px solid #ccc;
+  width: 23rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-description {
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 21rem;
+}
+
+.card-title {
+  color: #333;
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.card-description h4 {
+  color: #666;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.personalRating {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  display: flex;
+  gap: 1rem;
+}
+
+.personalRating p {
+  margin: 0;
+  color: #333;
+}
+
+.card-ratings {
+  padding: 1rem;
+  margin-left: 20px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.title-rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-rating h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* ESTILOS BOTON AÑADIR VALORACION */
+.btn-rating {
+  background-color: #fa2c05;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-rating:hover {
+  background-color: #b32100;
+}
+
+.btn-rating:active {
+  background-color: #cc2400;
+}
+
+.btn-rating:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 44, 5, 0.5);
+}
+
+.rating-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 10px;
+}
+
+.rating-form label {
+  color: #666;
+  font-weight: bold;
+  width: 100%;
+}
+
+.rating-form input[type="number"] {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.btn-group-rating {
+  display: flex;
+}
+
+/* ESTILO BOTON NUEVA VALORACION */
+.btn-submit-rating {
+  background-color: #fa2c05;
+  color: #fff;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit-rating:hover {
+  background-color: #e62900;
+}
+
+.btn-submit-rating:active {
+  background-color: #cc2400;
+}
+
+.btn-submit-rating:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 44, 5, 0.5);
+}
+
+/* ESTILO BOTON CANCELAR VALORACION */
+.btn-cancel-rating {
+  color: #fa2c05;
+  font-weight: bold;
+  background-color: #fff;
+  border: 1px solid #fa2c05;
+  border-radius: 0 8px 8px 0;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel-rating:hover {
+  border-color: #e62900;
+}
+
+.btn-cancel-rating:active {
+  border: 1px solid #cc2400;
+}
+
+.btn-cancel-rating:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 44, 5, 0.5);
+}
+
+/* ESTILO FORM NEVA SERIE */
+.form-serie {
+  margin-bottom: 2rem;
+}
+
+.form-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.form-background {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4141416c;
+}
+
+.form-container {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.form-title {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-close {
+  background-color: #fa2c05;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 0;
+  margin-right: 2rem;
+  display: grid;
+}
+
+.btn-close:hover {
+  background-color: #b32100;
+}
+
+.btn-close:active {
+  background-color: #cc2400;
+}
+
+.btn-close:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 44, 5, 0.5);
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.form-left,
+.form-right {
+  flex: 1;
+  padding: 10px;
+}
+
+.form-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #666;
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.btn-submit {
+  background-color: #fa2c05;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 25px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.btn-submit:hover {
+  background-color: #e62900;
+}
+
+.btn-submit:active {
+  background-color: #cc2400;
+}
+
+.btn-submit:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(250, 44, 5, 0.5);
+}
