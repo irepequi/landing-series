@@ -343,6 +343,12 @@ textarea {
   flex-grow: 1;
 }
 
+.error-form {
+  color: #fa2c05;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
 .btn-submit {
   background-color: #fa2c05;
   color: #fff;

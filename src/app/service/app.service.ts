@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -9,13 +10,21 @@ export class HttpService {
   private apiSeries = 'http://localhost:3000/series';
   private apiReviews = 'http://localhost:3000/reviews';
 
+  private sortSeries(series: any[]): any[] {
+    return series.sort((a, b) =>
+      a.title.toLowerCase().localeCompare(b.title.toLowerCase())
+    );
+  }
+
   constructor(private http: HttpClient) {}
 
   /**
    * Devuelve un array con todas las series ordenados por el título de manera ascendente.
    */
   getSeries(): Observable<any> {
-    return this.http.get(`${this.apiSeries}?_sort=title&_order=asc`);
+    return this.http
+      .get<any>(this.apiSeries)
+      .pipe(map((series: any) => this.sortSeries(series)));
   }
 
   /**

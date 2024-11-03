@@ -1,8 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { HttpService } from '../../service/app.service';
 
 @Component({
@@ -27,12 +31,24 @@ export class RatingsComponent implements OnInit {
   isOpen = false;
   isOpenRating = false;
 
-  constructor(private httpService: HttpService) {}
+  newSerieForm: FormGroup;
+
+  constructor(private httpService: HttpService, private fb: FormBuilder) {
+    this.newSerieForm = this.fb.group({
+      title: ['', [Validators.required]],
+      streamingPlatform: ['', Validators.required],
+      synopsis: ['', Validators.required],
+      cover: ['', Validators.required],
+    });
+  }
 
   ngOnInit() {
     this.loadReviewsById();
   }
 
+  /**
+   * Asigna una serie de reseñas a cada serie en función de sus id.
+   */
   loadReviewsById() {
     this.reviewsById = this.series?.map((serie: any) =>
       this.getReviewsBySerieId(serie.id)
@@ -45,7 +61,7 @@ export class RatingsComponent implements OnInit {
 
   closeNewSerie = () => {
     this.isOpen = false;
-    this.newSerie = { title: '', streamingPlatform: '', synopsis: '', cover: '' };
+    this.newSerieForm.reset();
   };
 
   closeRating = () => {
@@ -123,7 +139,12 @@ export class RatingsComponent implements OnInit {
         console.log('Valoración añadida:', response);
 
         this.reloadReviews(id);
-        this.newSerie = { title: '', streamingPlatform: '', synopsis: '', cover: '' };
+        this.newSerie = {
+          title: '',
+          streamingPlatform: '',
+          synopsis: '',
+          cover: '',
+        };
         this.personalRating = 0;
       },
       (error) => {
@@ -136,17 +157,17 @@ export class RatingsComponent implements OnInit {
    * Guarda la valoración que se creó en el formulario de la serie seleccionada.
    */
   addSerie = () => {
-    this.httpService.setSerie(this.newSerie).subscribe(
-      (response) => {
-        console.log('Valoración añadida:', response);
-
-        this.reloadSeries();
-
-        this.closeNewSerie();
-      },
-      (error) => {
-        console.error('Error al añadir la valoración:', error);
-      }
-    );
+    if (this.newSerieForm.valid) {
+      this.httpService.setSerie(this.newSerieForm.value).subscribe(
+        (response) => {
+          console.log('Serie añadida:', response);
+          this.reloadSeries();
+          this.closeNewSerie();
+        },
+        (error) => {
+          console.error('Error al añadir la serie:', error);
+        }
+      );
+    }
   };
 }
