@@ -50,15 +50,21 @@ export class TopSeriesComponent implements OnInit {
   };
 
   /**
-   * Ordena ascendentemente el listado de series por la valoración media.
+   * Comprueba que un valor sea NaN.
+   * @param {any} value - valor que se comprobará.
    */
-  sortSeriesByRating = () => {
-    return this.calculateAverage()?.sort(
-      (a: any, b: any) => b.averageRating - a.averageRating
-    );
-  };
-
   isValueNaN(value: any): boolean {
     return isNaN(value);
   }
+
+  /**
+   * Ordena ascendentemente el listado de series por la valoración media.
+   */
+  sortSeriesByRating = () => {
+    return this.calculateAverage()?.sort((a: any, b: any) => {
+      if (this.isValueNaN(a.averageRating)) return 1;
+      if (this.isValueNaN(b.averageRating)) return -1;
+      return b.averageRating - a.averageRating;
+    });
+  };
 }
