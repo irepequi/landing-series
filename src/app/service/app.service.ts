@@ -7,8 +7,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class HttpService {
-  private apiSeries = 'http://localhost:3000/series';
-  private apiReviews = 'http://localhost:3000/reviews';
+  // private apiSeries = 'http://localhost:3000/series';
+  // private apiReviews = 'http://localhost:3000/reviews';
+  private apiSeries = 'https://json-server-vercel-gamma-two.vercel.app/series';
+  private apiReviews =
+    'https://json-server-vercel-gamma-two.vercel.app/reviews';
 
   private sortSeries(series: any[]): any[] {
     return series.sort((a, b) =>
